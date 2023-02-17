@@ -373,7 +373,7 @@ function ex2(props) {
     };
 
     function Save() {
-        fetch("http://localhost:3000/api/save_ex2", {
+        fetch("api/save_ex2", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -1472,7 +1472,7 @@ export async function getServerSideProps(context) {
     //     .then((data) => console.log(data));
 
     const res = await axios
-        .get(`http://192.168.35.213:3000/api/list2`, {
+        .get(`http://localhost:3000/api/list2`, {
             params: {
                 id: id,
             },

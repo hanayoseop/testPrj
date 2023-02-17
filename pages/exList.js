@@ -31,7 +31,7 @@ function exList(props) {
 
     function selectList() {
         useEffect(() => {
-            fetch("http://192.168.35.213:3000/api/test")
+            fetch("api/test")
                 .then((data) => data.json())
                 .then((data) => setTableData(data));
         }, []);

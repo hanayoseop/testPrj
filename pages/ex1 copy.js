@@ -245,7 +245,7 @@ function ex1(props) {
 
     function Save() {
         // alert("Complete  Save!");
-        fetch("http://192.168.35.233:3000/api/save_ex1", {
+        fetch("api/save_ex1", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

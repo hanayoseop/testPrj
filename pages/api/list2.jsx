@@ -2,6 +2,7 @@ import { NextApiRequest, NextApiResponse } from "next";
 const db = require("../../db/db");
 
 export default function list2(req, res) {
+    console.log(req.body);
     db.query(
         "SELECT * FROM rite.t_test_result_ex1 where no = ?",
         [req.query.id],
