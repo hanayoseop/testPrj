@@ -17,7 +17,6 @@
             "version": "detect"
         }
     },
-    "requireConfigFile": false,
     "parser": "@babel/eslint-parser",
     "parserOptions": {
         "ecmaFeatures": {
