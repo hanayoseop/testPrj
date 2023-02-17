@@ -65,11 +65,13 @@ function exList(props) {
                 params.row.exam_typ === "EX1" ? (
                     <Link
                         href={{
-                            pathname: "/ex1_2",
+                            pathname: "/ex1_2/",
                             query: { id: params.row.id },
                         }}
                     >
-                        {params.row.id}
+                        <div>
+                            <a>{params.row.id}</a>
+                        </div>
                     </Link>
                 ) : (
                     <Link
@@ -78,7 +80,9 @@ function exList(props) {
                             query: { id: params.row.id },
                         }}
                     >
-                        {params.row.id}
+                        <div>
+                            <a>{params.row.id}</a>
+                        </div>
                     </Link>
                 ),
         },

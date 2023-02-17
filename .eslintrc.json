@@ -4,7 +4,7 @@
         "es6": true,
         "node": true
     },
-    "parser": "@babel/eslint-parser",
+
     "extends": [
         "eslint:recommended",
         "plugin:react/recommended",
@@ -18,12 +18,14 @@
         }
     },
     "requireConfigFile": false,
+    "parser": "@babel/eslint-parser",
     "parserOptions": {
         "ecmaFeatures": {
             "jsx": true
         },
         "ecmaVersion": 8,
-        "sourceType": "module"
+        "sourceType": "module",
+        "requireConfigFile": "false"
     },
     "plugins": ["react", "react-hooks", "prettier"],
     "rules": {
