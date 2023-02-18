@@ -16,6 +16,9 @@ import { RESPONSE_LIMIT_DEFAULT } from "next/dist/server/api-utils";
 
 import Link from "next/link";
 
+import axios from "axios";
+import { useRouter } from "next/router";
+
 function ValueLabelComponent(props) {
     const { children, value } = props;
 
@@ -29,18 +32,17 @@ function ValueLabelComponent(props) {
 function exList(props) {
     const [tableData, setTableData] = useState([]);
 
-    function selectList() {
-        useEffect(() => {
-            fetch("api/test")
-                .then((data) => data.json())
-                .then((data) => setTableData(data));
-        }, []);
-        // fetch("http://localhost:3000/api/test")
-        //     .then((res) => callBack(result))
-        //     .then((data) => console.log(data));
-    }
+    // function selectList() {
+    useEffect(() => {
+        console.log(props.data);
+        setTableData(props.data);
+    }, []);
+    // fetch("http://localhost:3000/api/test")
+    //     .then((res) => callBack(result))
+    //     .then((data) => console.log(data));
+    // }
 
-    selectList();
+    // selectList();
 
     const [name, setName] = useState("");
 
@@ -216,6 +218,46 @@ function exList(props) {
 }
 export default exList;
 
+export async function getServerSideProps(context) {
+    // api 이용해서 데이터 불러오기 (async, await으로 기다려주기)
+    const id = context.query.id;
+    // const res = await fetch("https://example_site.com/user_data");
+    // fetch("http://localhost:3000/api/list2")
+    // const res = fetch("http://localhost:3000/api/list2", {
+    //     method: "GET",
+    //     headers: {
+    //         "Content-Type": "application/json",
+    //     },
+    //     body: JSON.stringify({
+    //         no: id,
+    //     }),
+    // });
+    // const res = fetch(`http://localhost:3000/api/list2/${id}`, {
+    //     headers: {
+    //         Accept: "application/json",
+    //     },
+    // })
+    //     .then((data) => data.json())
+    //     .then((data) => console.log(data));
+
+    const res = await axios
+        // .get(`http://localhost:3000/api/list2`, {
+        .get(`http://127.0.0.1:3000/api/test`)
+        .then(function (res) {
+            // console.log(res.data);
+            return res.data;
+        });
+
+    // page에 props로 전달하기위해, json 형식으로 변경해주기
+    // 페이지 props로 전달하기 (json 형식만 가능)
+
+    return {
+        props: {
+            data: res,
+        },
+    };
+}
+
 const Info = styled.div`
     height: 100%;
     max-width: 100%;
@@ -241,6 +283,6 @@ const Info = styled.div`
         align-items: center;
         justify-content: center;
         margin-top: 35px;
-        with: "100%";
+        width: "100%";
     }
 `;
