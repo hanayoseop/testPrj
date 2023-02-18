@@ -375,7 +375,7 @@ function ex1(props) {
                         placeholder="Enter School/Grade."
                     />
                 </div>
-                <Button className="btnSave" onClick={Save}>
+                <Button type="button" className="btnSave" onClick={Save}>
                     저장
                 </Button>
             </div>

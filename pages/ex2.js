@@ -423,7 +423,7 @@ function ex2(props) {
                     />
                 </div>
                 {/* <Button className="btnSave" variant="contained" onClick={Save}> */}
-                <Button className="btnSave" onClick={Save}>
+                <Button type="button" className="btnSave" onClick={Save}>
                     저장
                 </Button>
             </div>
