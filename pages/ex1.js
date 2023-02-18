@@ -929,8 +929,13 @@ function ex1(props) {
 export default ex1;
 const PrettoSlider = styled(Slider)({
     // color: "#52af77",
-    color: "#97DECE",
-    height: 8,
+    // color: "#97DECE",
+    // height: 8,
+    "& .MuiSlider-rail": {
+        // opacity: 5,
+        height: 8,
+        backgroundColor: "#52af77",
+    },
     "& .MuiSlider-track": {
         border: "none",
     },
@@ -938,6 +943,7 @@ const PrettoSlider = styled(Slider)({
         height: 24,
         width: 24,
         backgroundColor: "#fff",
+        color: "#97DECE",
         border: "2px solid currentColor",
         "&:focus, &:hover, &.Mui-active, &.Mui-focusVisible": {
             boxShadow: "inherit",
@@ -970,8 +976,13 @@ const PrettoSlider = styled(Slider)({
 
 const PrettoSlider2 = styled(Slider)({
     // color: "#52af77",
-    color: "#1160AA",
-    height: 8,
+    // color: "#1160AA",
+    // height: 8,
+    "& .MuiSlider-rail": {
+        // opacity: 5,
+        height: 8,
+        backgroundColor: "#1160AA",
+    },
     "& .MuiSlider-track": {
         border: "none",
     },
