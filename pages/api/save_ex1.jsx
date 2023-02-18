@@ -1,9 +1,10 @@
-import { NextApiRequest, NextApiResponse } from "next";
+// import { NextApiRequest, NextApiResponse } from "next";
 const db = require("../../db/db");
 
 export default function save(req, res) {
     // console.log(req.body.name);
     // console.log(req.body);
+    console.log(db);
     db.query(
         "insert into rite.t_test_result_ex1 (name, school, result01, result02, result03, result04, result05, result06, result07, result08, result09, result10, class, comment, reg_date, exam_typ) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,SYSDATE(),'EX1')",
         [
